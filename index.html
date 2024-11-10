@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message for Priyanshi</title>
+    <style>
+        /* Basic Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ffebf0;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 4em;
+            color: #ff007f;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 2em;
+            color: #ff007f;
+            font-weight: bold;
+            margin: 10px 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .kiss-gif {
+            width: 150px;
+            height: auto;
+            margin-top: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        /* Heart Styles and Animation */
+        #hearts {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .heart {
+            position: absolute;
+            bottom: -20px;
+            width: 20px;
+            height: 20px;
+            background-color: #ff007f;
+            opacity: 0.7;
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0 35%);
+            animation: float 8s linear infinite;
+        }
+
+        /* Keyframes */
+        @keyframes float {
+            0% {
+                transform: scale(0.5) translateY(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1) translateY(-110vh);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Priyanshi ❤️</h1>
+        <p>I love you a lot, bahuuuuuuut saraaaaa!</p><br>
+        <p>I am Sorry 🥹🥹 </p>
+        <br><p>Tera babydoll ko maaf karde yaar please</p>
+        <br><p>and we are meeting on 15th Nov 😘😘😘😘🥰🥰🥰🥰</p><br>
+        <p>And mera prepare ho gya hai exam ka</p>
+        <!-- <img src="https://media.giphy.com/media/l0HlLGeVf8bdkhKB2/giphy.gif" alt="Kissing GIF" class="kiss-gif"> -->
+    </div>
+    <div id="hearts"></div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.width = Math.random() * 20 + 10 + 'px';
+            heart.style.height = heart.style.width;
+            heart.style.animationDuration = Math.random() * 3 + 5 + 's';
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+        
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
